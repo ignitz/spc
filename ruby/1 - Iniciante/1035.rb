@@ -1,3 +1,4 @@
+# Teste de Seleção 1
 entrada = gets.chomp.split(" ")
 a = entrada[0].to_i
 b = entrada[1].to_i
