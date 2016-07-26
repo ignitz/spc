@@ -1,0 +1,36 @@
+import math
+
+entrada = float(input())
+n = int(entrada)
+m = entrada - math.floor(entrada)
+m = int(m*100)
+
+# Notas
+print('NOTAS:')
+x, n = divmod(n, 100)
+print(x, "nota(s) de R$ 100.00")
+x, n = divmod(n, 50)
+print(x, "nota(s) de R$ 50.00")
+x, n = divmod(n, 20)
+print(x, "nota(s) de R$ 20.00")
+x, n = divmod(n, 10)
+print(x, "nota(s) de R$ 10.00")
+x, n = divmod(n, 5)
+print(x, "nota(s) de R$ 5.00")
+x, n = divmod(n, 2)
+print(x, "nota(s) de R$ 2.00")
+
+# Moedas
+print('MOEDAS:')
+x, n = divmod(n, 1)
+print(x, "moeda(s) de R$ 1.00")
+x, m = divmod(m, 50)
+print(x, "moeda(s) de R$ 0.50")
+x, m = divmod(m, 25)
+print(x, "moeda(s) de R$ 0.25")
+x, m = divmod(m, 10)
+print(x, "moeda(s) de R$ 0.10")
+x, m = divmod(m, 5)
+print(x, "moeda(s) de R$ 0.05")
+x, m = divmod(m, 1)
+print(x, "moeda(s) de R$ 0.01")

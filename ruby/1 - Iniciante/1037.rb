@@ -15,9 +15,9 @@ if entrada >= 0
 	elsif entrada <= 100.0
 		puts "Intervalo (75,100]"
 	else
-		puts "Fora do intervalo"
+		puts "Fora de intervalo"
 	end
 else
-	puts "Fora do intervalo"
+	puts "Fora de intervalo"
 end
 
