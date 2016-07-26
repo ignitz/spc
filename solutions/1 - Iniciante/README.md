@@ -25,7 +25,7 @@ https://www.urionlinejudge.com.br/judge/pt/problems/index/1
 - 1021 - Notas e Moedas
 - 1035 - Teste de Seleção 1
 - 1036 - Fórmula de Bhaskara
-- 1037 - Intervalo - Com problema desconhecido no Ruby (aparentemente). Tentei utilizar o BigDecimal.
+- 1037 - Intervalo
 - 1038 - Lanche
 - 1040 - Média 3
 - 1041 - Coordenadas de um Ponto
