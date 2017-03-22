@@ -16,7 +16,6 @@ while True:
     Q, D, P = args
     # Q*(n+D) = P*n \implies n = DQ/(P-Q)
     n = (D*Q)/(P-Q)
-    print(n)
     n = P*n
     n = math.ceil(n)
 
