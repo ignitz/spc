@@ -17,7 +17,7 @@ while True:
     # Q*(n+D) = P*n \implies n = DQ/(P-Q)
     n = (D*Q)/(P-Q)
     n = P*n
-    n = math.ceil(n)
+    n = abs(math.ceil(n))
 
     if n == 1:
         print(n, 'pagina')
