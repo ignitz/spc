@@ -1,3 +1,8 @@
+# Yuri Diego Santos Niitsuma
+# 2011039023
+# Coordenadas de um Ponto
+# https://www.urionlinejudge.com.br/judge/pt/problems/view/1041
+
 x , y = input().split()
 x = float(x)
 y = float(y)

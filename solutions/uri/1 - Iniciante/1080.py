@@ -1,3 +1,8 @@
+# Yuri Diego Santos Niitsuma
+# 2011039023
+# Maior e Posição
+# https://www.urionlinejudge.com.br/judge/pt/problems/view/1080
+
 max_number = (0, None)
 
 for i in range(0, 100):
