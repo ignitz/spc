@@ -3,6 +3,13 @@
 # http://codeforces.com/problemset/problem/18/A
 # TRIANGLE
 
+'''
+Tentei resolver com dotproduct igual a zero para encontrar
+vetores perpendiculares. Mas mudei a estratégia para o
+teorema de pitágoras pois caia no problema de pontos
+sobrepostos (provalmente).
+'''
+
 import operator
 
 def get_size(a, b):
