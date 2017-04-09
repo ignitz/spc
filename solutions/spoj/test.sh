@@ -11,4 +11,4 @@ function test() {
   fi
 }
 
-test CANDY
+test TESOUR11
