@@ -1,3 +1,5 @@
+#!/bin/bash
+
 clean_exec() {
 	if [ -f *.out ]; then
 		echo "cleaning executables"
@@ -5,11 +7,25 @@ clean_exec() {
 	fi
 }
 
-do_test() {
+do_test_cpp() {
 	for i in $(seq 1 $2)
 	do
 		echo "test number $i:"
 		./$1.out < tests/input$i.txt > tests/temp$i.txt
+		diff tests/temp$i.txt tests/output$i.txt > /dev/null
+		if [ $? -ne 0 ] ; then
+			echo "----------------- error in $i"
+			diff tests/temp$i.txt tests/output$i.txt
+		fi
+		rm -rf tests/temp$i.txt
+	done
+}
+
+do_test_python() {
+	for i in $(seq 1 $2)
+	do
+		echo "test number $i:"
+		python3 $1.py < tests/input$i.txt > tests/temp$i.txt
 		diff tests/temp$i.txt tests/output$i.txt > /dev/null
 		if [ $? -ne 0 ] ; then
 			echo "----------------- error in $i"
@@ -30,15 +46,19 @@ check_error() {
 	fi
 }
 
-main() {
+main_cpp() {
 	clean_exec
 	compile $1
 	check_error $1
-	do_test $1 $2
+	do_test_cpp $1 $2
 	clean_exec
 }
 
-do_dev() {
+main_python() {
+	do_test_python $1 $2
+}
+
+do_dev_cpp() {
 	clean_exec
 	compile $1
 	check_error $1
@@ -47,8 +67,23 @@ do_dev() {
 	clean_exec
 }
 
-test_times=9
-test_id=1961
+do_dev_python() {
+	python3 $1.py < tests/input1.txt
+}
 
-# do_dev $test_id
-main $test_id $test_times
+test_times=1
+test_id=1244
+# cpp or python, python version is 3
+choose_language=python
+
+if [ $choose_language = "cpp" ]; then
+	# do_dev_cpp $test_id
+	# main_cpp $test_id $test_times
+	:
+elif [ $choose_language = "python" ]; then
+	do_dev_python $test_id
+	# main_python $test_id $test_times
+	:
+else
+	echo "No language set"
+fi
