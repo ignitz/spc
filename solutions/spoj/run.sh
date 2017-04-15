@@ -67,7 +67,7 @@ do_dev_cpp() {
 		exit 1
 	fi
 	cat $1/tests/input1.txt
-	./$1.out < $1/tests/input1.txt
+	./$1.out < $1/tests/temp.txt
 
 	clean_exec
 }
@@ -77,7 +77,7 @@ do_dev_python() {
 		echo "No tests directory in $1"
 		exit 1
 	fi
-	python3 $1/$1.py < $1/tests/input1.txt
+	python3 $1/$1.py < $1/tests/temp.txt
 }
 
 test_times=$2
