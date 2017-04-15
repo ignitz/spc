@@ -36,7 +36,7 @@ do_test_python() {
 }
 
 compile() {
-	g++ $1/$1.cpp -std=c++14 -o $1.out
+	g++ $1/$1.cpp -g -std=c++11 -o $1.out
 }
 
 check_error() {
@@ -68,6 +68,7 @@ do_dev_cpp() {
 	fi
 	cat $1/tests/input1.txt
 	./$1.out < $1/tests/input1.txt
+
 	clean_exec
 }
 
@@ -82,7 +83,7 @@ do_dev_python() {
 test_times=$2
 test_id=$1
 # cpp or python, python version is 3
-choose_language=python
+choose_language=cpp
 
 if [ $choose_language = "cpp" ]; then
 	if [ $test_times ]; then
