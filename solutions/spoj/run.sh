@@ -66,7 +66,7 @@ do_dev_cpp() {
 		echo "No tests directory in $1"
 		exit 1
 	fi
-	cat $1/tests/input1.txt
+	cat $1/tests/temp.txt
 	./$1.out < $1/tests/temp.txt
 
 	clean_exec
