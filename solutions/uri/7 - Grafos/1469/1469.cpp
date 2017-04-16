@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <vector>
-#include <queue>
+#include <stack>
 
 #include <algorithm>
 
@@ -40,6 +40,7 @@ public:
 
   void set_who_manage(int x, int y);
   void swap_employee(int x, int y);
+  int check_who_is_younger();
   void manager_more_younger(int x);
   void printMatrix();
 };
@@ -85,6 +86,15 @@ void Graph::swap_employee(int x, int y) {
   std::cerr << "=================================" << '\n';
 }
 
+int Graph::check_who_is_younger() {
+  int min_age = MAX_AGE + 1;
+  for (int i = 1; i <= this->size; i++) {
+    if (this->matrix[i][0] == 0 && min_age > this->persons[i-1].age)
+      min_age = this->persons[i-1].age;
+  }
+  return min_age;
+}
+
 // search depth in here
 void Graph::manager_more_younger(int x) {
   std::cerr << "=================================" << '\n';
@@ -96,22 +106,30 @@ void Graph::manager_more_younger(int x) {
   int min_age = MAX_AGE + 1;
 
   colors[x] = 1;
-  std::queue<int> q;
-  q.push(x);
+  std::stack<int> stack;
+  stack.push(x);
 
-  while (!q.empty()) {
+  int global_min = this->check_who_is_younger();
+
+  while (!stack.empty()) {
     print_colors(colors);
-    vertice = q.front();
-    q.pop();
+    vertice = stack.top();
+    stack.pop();
 
     if (this->matrix[vertice][0] == 0)
       continue;
     for (int i = 1; i <= this->size; i++) {
       if (this->matrix[vertice][i] == -1 && !colors[i]) {
         colors[i] = 1;
-        q.push(i);
-        if (min_age > this->persons[i-1].age)
+        stack.push(i);
+        if (min_age > this->persons[i-1].age) {
           min_age = this->persons[i-1].age;
+          if (min_age == global_min) {
+            std::cout << min_age << '\n';
+            std::cerr << min_age << '\n';
+            return;
+          }
+        }
       }
 
     }
