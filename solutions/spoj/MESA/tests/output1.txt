@@ -1,0 +1,5 @@
+Instancia 1
+nao
+
+Instancia 2
+sim
