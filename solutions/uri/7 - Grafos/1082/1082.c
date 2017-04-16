@@ -12,10 +12,10 @@ void printGrafo(int *V, unsigned long int iNumVert)
 	int flag = 0,
 		*check;
 	check = (int*) malloc(iNumVert * sizeof(int));
-	
+
 	for (i = 0; i < iNumVert; ++i)
 		check[i] = 0;
-	
+
 
 	for (i = 0; i < iNumVert; ++i)
 	{
@@ -26,7 +26,7 @@ void printGrafo(int *V, unsigned long int iNumVert)
 				flag = 1;
 				check[j] = 1;
 				printf("%c,", (char) j + 97);
-			}	
+			}
 		}
 		if(flag)
 		{

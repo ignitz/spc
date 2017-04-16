@@ -67,6 +67,7 @@ do_dev_cpp() {
 		exit 1
 	fi
 	cat $1/tests/temp.txt
+	echo "========================"
 	./$1.out < $1/tests/temp.txt 2> /dev/null
 	# ./$1.out < $1/tests/temp.txt 1> /dev/null
 

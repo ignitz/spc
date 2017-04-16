@@ -132,25 +132,26 @@ void Graph::manager_more_younger(int x) {
 
 void Graph::printMatrix() {
   for (int i = 0; i < this->size; i++) { // Print ages
-    std::cerr << this->persons[i].id << ' ' << this->persons[i].age << '\t';
+    std::cout << this->persons[i].id << ' '
+      << this->persons[i].age << '\t';
   }
-  std::cerr << "\n       ";
+  std::cout << "\n       ";
 
   for (int i = 1; i <= this->size; i++) {
-    (i < 10) ? (i < 100) ? std::cerr << "  " : std::cerr << " " : std::cerr << "";
-    std::cerr << i;
+    (i < 10) ? (i < 100) ? std::cout << "  " : std::cout << " " : std::cout << "";
+    std::cout << i;
   }
-  std::cerr << '\n';
+  std::cout << '\n';
 
   for (int i = 1; i <= this->size; i++) {
-    (i < 10) ? (i < 100) ? std::cerr << "  " : std::cerr << " " : std::cerr << "";
-    std::cerr << i << " --> ";
+    (i < 10) ? (i < 100) ? std::cout << "  " : std::cout << " " : std::cout << "";
+    std::cout << i << " --> ";
     for (int j = 1; j <= this->size; j++) {
       if (this->matrix[i][j] != -1)
-        std::cerr << " ";
-      std::cerr << this->matrix[i][j] << " ";
+        std::cout << " ";
+      std::cout << this->matrix[i][j] << " ";
     }
-    std::cerr << '\n';
+    std::cout << '\n';
   }
 }
 
@@ -185,8 +186,7 @@ int main(int argc, char const *argv[]) {
       graph.set_who_manage(x, y);
     }
     // DEBUG
-    graph.printMatrix()
-    ;
+    // graph.printMatrix();
 
     for (int i = 0; i < p; i++) {
       std::cin >> option;
@@ -205,7 +205,7 @@ int main(int argc, char const *argv[]) {
     }
 
     // DEBUG
-    graph.printMatrix();
+    // graph.printMatrix();
 
   }
   return 0;
