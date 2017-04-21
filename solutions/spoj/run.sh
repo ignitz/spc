@@ -80,10 +80,10 @@ do_dev_python() {
 	python3 $1/$1.py < $1/tests/temp.txt
 }
 
-test_times=$2
+test_times=$3
 test_id=$1
 # cpp or python, python version is 3
-choose_language=cpp
+choose_language=$2
 
 if [ $choose_language = "cpp" ]; then
 	if [ $test_times ]; then
@@ -93,7 +93,7 @@ if [ $choose_language = "cpp" ]; then
 	fi
 
 	:
-elif [ $choose_language = "python" ]; then
+elif [ $choose_language = "py" ]; then
 	if [ $test_times ]; then
 		main_python $test_id $test_times
 	else
