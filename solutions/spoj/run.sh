@@ -67,6 +67,7 @@ do_dev_cpp() {
 		exit 1
 	fi
 	cat $1/tests/temp.txt
+	echo '===================================='
 	./$1.out < $1/tests/temp.txt
 
 	clean_exec
@@ -107,7 +108,7 @@ elif [ $choose_language = "make" ]; then
 	   # Estou assumindo que já é do SPOJ
 	   printf "/*\n * Yuri Niitsuma\n * 2011039023\n * http://br.spoj.com/problems/$test_id/\n * $test_id\n */\n" > $test_id/$test_id.cpp
 	   mkdir $test_id/tests
-	   touch $test_id/tests/temp.txt 
+	   touch $test_id/tests/temp.txt
 	   touch $test_id/tests/input1.txt
 	   touch $test_id/tests/output1.txt
 	fi
