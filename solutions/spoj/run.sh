@@ -104,10 +104,12 @@ elif [ $choose_language = "make" ]; then
    else
 	   mkdir $test_id
 	   touch $test_id/$test_id.cpp
+	   # Estou assumindo que já é do SPOJ
+	   printf "/*\n * Yuri Niitsuma\n * 2011039023\n * http://br.spoj.com/problems/$test_id/\n * $test_id\n */\n" > $test_id/$test_id.cpp
 	   mkdir $test_id/tests
-	   touch $test_id/temp.txt 
-	   touch $test_id/input1.txt
-	   touch $test_id/output1.txt
+	   touch $test_id/tests/temp.txt 
+	   touch $test_id/tests/input1.txt
+	   touch $test_id/tests/output1.txt
 	fi
 else
 	echo "No language set"
