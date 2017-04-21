@@ -99,7 +99,7 @@ elif [ $choose_language = "py" ]; then
 	fi
 elif [ $choose_language = "make" ]; then
    if [ -d $test_id ]; then
-	   echo 'Test ' . $test_id . ' exist'
+	   echo 'Test ' . $test_id . ' already exist.'
 	   exit 1
    else
 	   mkdir $test_id
@@ -108,6 +108,7 @@ elif [ $choose_language = "make" ]; then
 	   touch $test_id/temp.txt 
 	   touch $test_id/input1.txt
 	   touch $test_id/output1.txt
+	fi
 else
 	echo "No language set"
 fi
