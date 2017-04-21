@@ -81,9 +81,9 @@ do_dev_python() {
 }
 
 test_times=$3
-test_id=$1
+test_id=$2
 # cpp or python, python version is 3
-choose_language=$2
+choose_language=$1
 
 if [ $choose_language = "cpp" ]; then
 	if [ $test_times ]; then
@@ -91,15 +91,23 @@ if [ $choose_language = "cpp" ]; then
 	else
 		do_dev_cpp $test_id
 	fi
-
-	:
 elif [ $choose_language = "py" ]; then
 	if [ $test_times ]; then
 		main_python $test_id $test_times
 	else
 		do_dev_python $test_id
 	fi
-	:
+elif [ $choose_language = "make" ]; then
+   if [ -d $test_id ]; then
+	   echo 'Test ' . $test_id . ' exist'
+	   exit 1
+   else
+	   mkdir $test_id
+	   touch $test_id/$test_id.cpp
+	   mkdir $test_id/tests
+	   touch $test_id/temp.txt 
+	   touch $test_id/input1.txt
+	   touch $test_id/output1.txt
 else
 	echo "No language set"
 fi
