@@ -1,0 +1,11 @@
+10
+A B 16
+A C 13
+B C 10
+C B 4
+B D 12
+D C 9
+C E 14
+E D 7
+D Z 20
+E Z 4
