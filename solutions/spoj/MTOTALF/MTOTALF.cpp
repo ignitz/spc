@@ -14,6 +14,7 @@
 #include <queue>
 #include <limits>
 
+#define SINK 25
 
 class Graph {
 private:
@@ -21,7 +22,7 @@ private:
   std::vector<std::vector<int>> edges;
   std::vector<int> parent;
 
-  // bool dfs(int x);
+  bool dfs(int x);
   bool bfs(int x);
 
 public:
@@ -57,7 +58,7 @@ void Graph::set_weight(char u, char v, int weight) {
 }
 
 bool Graph::bfs( int init_v ) {
-  // std::cerr << "exec bfs" << '\n';
+  std::cerr << "exec bfs" << '\n';
   std::vector<bool> colors;
   colors.resize(this->n, false);
 
@@ -69,9 +70,12 @@ bool Graph::bfs( int init_v ) {
 
   while (!queue.empty()) {
     u = queue.front();
-    // std::cerr << u << '\n';
+    std::cerr << u << '\t';
     queue.pop();
-    if (u == 25) return true;
+    if (u == SINK) {
+      std::cerr << '\n';
+      return true;
+    }
     for (int v = 0; v < this->n; v++) {
       if (this->edges[u][v] > 0 && !colors[v]) {
         queue.push(v);
@@ -80,37 +84,75 @@ bool Graph::bfs( int init_v ) {
       }
     }
   }
+  std::cerr << '\n';
+  return false;
+}
+
+bool Graph::dfs( int init_v ) {
+  std::cerr << "exec bfs" << '\n';
+  std::vector<bool> colors;
+  colors.resize(this->n, false);
+
+  std::stack<int> mystack;
+  mystack.push(init_v);
+  colors[0] = true;
+
+  int u;
+
+  while (!mystack.empty()) {
+    u = mystack.top();
+    std::cerr << u << '\t';
+    mystack.pop();
+    if (u == SINK) {
+      std::cerr << '\n';
+      return true;
+    }
+    for (int v = 0; v < this->n; v++) {
+      if (this->edges[u][v] > 0 && !colors[v]) {
+        mystack.push(v);
+        colors[v] = true;
+        this->parent[v] = u;
+      }
+    }
+  }
+  std::cerr << '\n';
   return false;
 }
 
 int Graph::FordFulkerson() {
-  // std::cerr << "initint totalflow" << '\n';
+  std::cerr << "initint totalflow" << '\n';
   int response = 0;
   int path_flow;
   std::fill(this->parent.begin(), this->parent.end(), -1);
 
-  while (this->bfs(0)) {
+  while (this->dfs(0)) {
+
+    // Find minimum residual capacity of the edges along the
+    // path filled by BFS. Or we can say find the maximum flow
+    // through the path found.
     path_flow = std::numeric_limits<int>::max();
-    int s = 25; // sink
+    int s = SINK; // sink
 
     while (s != 0) { // sink != source
       path_flow = std::min(path_flow, this->edges[this->parent[s]][s]);
       s = parent[s];
     }
 
-    // std::cerr << "get path_flow " << path_flow << '\n';
-    response += path_flow;
+    std::cerr << "get path_flow " << path_flow << '\n';
+    response += path_flow; // Add path flow to overall flow
 
-    // update residual capacities
-    int v = 25;
+    // update residual capacities of the edges and reverse edges
+    // along the path
+    int v = SINK;
     int u;
     while (v != 0) {
       u = this->parent[v];
       this->edges[u][v] -= path_flow;
       this->edges[v][u] += path_flow;
-      v = parent[v];
+      v = this->parent[v];
     }
   }
+  std::cerr << "response " << response << '\n';
   return response;
 }
 
