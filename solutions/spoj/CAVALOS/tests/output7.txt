@@ -1,0 +1,149 @@
+Instancia 1
+39
+
+Instancia 2
+47
+
+Instancia 3
+11
+
+Instancia 4
+48
+
+Instancia 5
+52
+
+Instancia 6
+31
+
+Instancia 7
+89
+
+Instancia 8
+17
+
+Instancia 9
+35
+
+Instancia 10
+41
+
+Instancia 11
+65
+
+Instancia 12
+69
+
+Instancia 13
+11
+
+Instancia 14
+60
+
+Instancia 15
+22
+
+Instancia 16
+95
+
+Instancia 17
+56
+
+Instancia 18
+21
+
+Instancia 19
+70
+
+Instancia 20
+8
+
+Instancia 21
+65
+
+Instancia 22
+78
+
+Instancia 23
+78
+
+Instancia 24
+89
+
+Instancia 25
+45
+
+Instancia 26
+50
+
+Instancia 27
+52
+
+Instancia 28
+65
+
+Instancia 29
+55
+
+Instancia 30
+76
+
+Instancia 31
+100
+
+Instancia 32
+45
+
+Instancia 33
+32
+
+Instancia 34
+69
+
+Instancia 35
+72
+
+Instancia 36
+48
+
+Instancia 37
+76
+
+Instancia 38
+57
+
+Instancia 39
+89
+
+Instancia 40
+88
+
+Instancia 41
+6
+
+Instancia 42
+25
+
+Instancia 43
+74
+
+Instancia 44
+29
+
+Instancia 45
+2
+
+Instancia 46
+50
+
+Instancia 47
+17
+
+Instancia 48
+48
+
+Instancia 49
+66
+
+Instancia 50
+100
