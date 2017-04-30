@@ -10,6 +10,17 @@
 #include <stack>
 #include <queue>
 #include <limits>
+#include <tuple>
+#include <algorithm>
+
+
+bool mycomp(const std::tuple<int, int, int> & a, const std::tuple<int, int, int> & b)
+{
+  return std::get<2>(a) < std::get<2>(b);
+}
+
+// Mesma ideia do primeiro MTOTALF do spoj
+// Utilizando FordFulkerson
 
 class Graph {
 private:
@@ -18,7 +29,6 @@ private:
   std::vector<std::vector<int>> capacity;
   std::vector<std::vector<int>> rCap;
   std::vector<int> parent;
-  bool dfs(int source_v, int destiny_v);
   bool bfs(int source_v, int destiny_v);
 
 public:
@@ -50,86 +60,58 @@ void Graph::set_weight(int u, int v, int weight) {
 }
 
 bool Graph::bfs( int source_v, int destiny_v ) {
-  std::cerr << "\033[1;37m" << "exec bfs" << '\n' << "\033[0m";
-  std::vector<bool> colors;
-  colors.resize(this->n, false);
+  // std::cerr << "\033[1;37m" << "exec bfs" << '\n' << "\033[0m";
+  // std::vector<bool> colors;
+  // colors.resize(this->n, false);
+  bool response = false;
+  int u;
 
   std::queue<int> queue;
   queue.push(source_v);
-  colors[source_v] = true;
+  // colors[source_v] = true;
 
-  int u;
+  std::fill(this->parent.begin(), this->parent.end(), -1);
+  parent[source_v] = source_v;
 
   while (!queue.empty()) {
     u = queue.front();
-    std::cerr << "\033[1;31m" << u << ' ' << "\033[0m";
+    // std::cerr << "\033[1;31m" << u << ' ' << "\033[0m";
     queue.pop();
-    if (u == destiny_v) {
-      std::cerr << "\033[1;31m" << '\n' << "\033[0m";
-      return true;
+    if (u == destiny_v) { // no return, because must finish theri job
+      // std::cerr << "\033[1;31m" << '\n' << "\033[0m";
+      response = true;
     }
+    std::sort(this->edges[u].begin(), this->edges[u].end());
     for ( auto v : this->edges[u] ) {
-      if (this->rCap[u][v] > 0 && !colors[v]) {
+      if (this->rCap[u][v] > 0 && parent[v] == -1) {
         queue.push(v);
-        colors[v] = true;
         this->parent[v] = u;
       }
     }
   }
-  std::cerr << "\033[1;31m" << '\n' << "\033[0m";
-  return false;
-}
-
-bool Graph::dfs( int source_v, int destiny_v ) {
-  std::cerr << "\033[1;37m" << "exec dfs" << '\n' << "\033[0m";
-  std::vector<bool> colors;
-  colors.resize(this->n, false);
-
-  std::stack<int> mystack;
-  mystack.push(source_v);
-  colors[source_v] = true;
-
-  int u;
-
-  while (!mystack.empty()) {
-    u = mystack.top();
-    std::cerr << "\033[1;31m" << u << ' ' << "\033[0m";
-    mystack.pop();
-    if (u == destiny_v) {
-      std::cerr << "\033[1;31m" << '\n' << "\033[0m";
-      return true;
-    }
-    for ( auto v : this->edges[u] ) {
-      if (this->rCap[u][v] > 0 && !colors[v]) {
-        mystack.push(v);
-        colors[v] = true;
-        this->parent[v] = u;
-      }
-    }
-  }
-  std::cerr << "\033[1;31m" << '\n' << "\033[0m";
-  return false;
+  // std::cerr << "\033[1;31m" << '\n' << "\033[0m";
+  return response;
 }
 
 int Graph::FordFulkerson( int source_v, int destiny_v ) {
-  std::cerr << "\033[1;37m" << "exec FordFulkerson" << '\n' << "\033[0m";
+  // std::cerr << "\033[1;37m" << "exec FordFulkerson" << '\n' << "\033[0m";
   int response = 0;
   int path_flow;
 
-  for (int i = 0; i <= this->n; i++) {
-    for (int j = 0; j <= this->n; j++) {
+  for (int i = 1; i <= this->n; i++) {
+    for (int j = 1; j <= this->n; j++) {
       this->rCap[i][j] = this->capacity[i][j];
     }
   }
 
-  std::fill(this->parent.begin(), this->parent.end(), -1);
+  // std::fill(this->parent.begin(), this->parent.end(), -1);
 
   while (this->bfs(source_v, destiny_v)) {
 
     for (int i = 1; i <= this->n; i++) {
-      std::cerr << "\033[1;36m" << this->parent[i] << ' ' << "\033[0m";
+      // std::cerr << "\033[1;36m" << this->parent[i] << ' ' << "\033[0m";
     }
-    std::cerr << "\033[1;31m" << '\n' << "\033[0m";
+    // std::cerr << "\033[1;31m" << '\n' << "\033[0m";
     // printRCap();
 
     // Find minimum residual capacity of the capacity along the
@@ -139,6 +121,7 @@ int Graph::FordFulkerson( int source_v, int destiny_v ) {
     int s = destiny_v;
 
     while (s != source_v) {
+      // std::cerr << "\033[1;34m" << "path_flow " << path_flow  << "\trCap[" << parent[s] << "][" << s << "] " << this->rCap[parent[s]][s] << '\n' << "\033[0m";
       path_flow = std::min(path_flow, this->rCap[parent[s]][s]);
       s = parent[s];
     }
@@ -155,12 +138,12 @@ int Graph::FordFulkerson( int source_v, int destiny_v ) {
       v = parent[v];
     }
 
-    std::cerr << "\033[1;32m" << "get path_flow " << path_flow << '\n' << "\033[0m";
+    // std::cerr << "\033[1;32m" << "get path_flow " << path_flow << '\n' << "\033[0m";
     response += path_flow; // Add path flow to overall flow
 
-    std::cerr << "\033[1;33m" << "max_flow " << response << '\n' << "\033[0m";
+    // std::cerr << "\033[1;33m" << "max_flow " << response << '\n' << "\033[0m";
   }
-  std::cerr << "\033[1;33m" << "response " << response << '\n' << "\033[0m";
+  // std::cerr << "\033[1;33m" << "response " << response << '\n' << "\033[0m";
   return response;
 }
 
@@ -198,6 +181,10 @@ int main(int argc, char const *argv[]) {
 
     std::cout << "Network " << count++ << '\n';
     std::cout << "The bandwidth is " << graph.FordFulkerson(s, t) << '.' << std::endl << std::endl;
+    // graph.printRCap();
+
+    // print_debug();
+
   }
 
   return 0;
