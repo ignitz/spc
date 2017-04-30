@@ -36,7 +36,7 @@ do_test_python() {
 }
 
 compile() {
-	g++ $1/$1.cpp -g -std=gnu++11 -o $1.out
+	g++ $1/$1.cpp -g -std=c++14 -o $1.out
 }
 
 check_error() {
