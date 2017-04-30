@@ -9,14 +9,15 @@
 // n + 1 primeiros representa cavalos e n + 1 até n + m + 1
 // os soldados
 
+// Por alguma razão ele da errado com lista de adjacencia.
+// Fiz 3 versões desta %$#@%$@@$#@
+
 #include <iostream>
 #include <vector>
 #include <stack>
 #include <queue>
 #include <limits>
 #include <algorithm>
-
-// #define DIGRAFO
 
 class Graph {
 private:
@@ -27,18 +28,16 @@ private:
   std::vector<std::vector<int>> capacity;
   std::vector<std::vector<int>> rCap; // residuo
   std::vector<int> parent;
-  bool bfs(int source_v, int destiny_v);
-  void set_weight (int u, int v, int weight);
+  bool dfs(int source_v, int destiny_v, std::vector<bool>& colors);
+  bool getPath(int source_v, int destiny_v);
 
 public:
   Graph (int n, int m);
   virtual ~Graph ();
 
-  void set_weight_horse(int v, int weight);
-  void set_weight_soldier(int v);
-  void set_weight_horse_to_soldier(int u, int v);
+  void set_weight (int u, int v, int weight);
   int FordFulkerson ();
-  void printEdges();
+  // void printEdges();
 };
 
 Graph::Graph (int n, int m) {
@@ -55,121 +54,82 @@ Graph::~Graph () {}
 
 void Graph::set_weight(int u, int v, int weight) {
   // if already have, just plus the weight
-  this->edges[u].push_back(v);
-  this->capacity[u][v] += weight;
-  #ifdef DIFRAGO
-  this->edges[v].push_back(u);
-  this->capacity[v][u] += weight;
+  // this->edges[u].push_back(v);
+  this->capacity[u][v] = weight;
+  #ifdef DIGRAFO
+  // this->edges[v].push_back(u);
+  this->capacity[v][u] = weight;
   #endif
 }
 
-void Graph::set_weight_horse(int v, int weight) {
-  this->set_weight(this->m + v, this->m + this->n + 1, weight);
-}
+bool Graph::dfs(int source, int destiny, std::vector<bool>& colors) {
+  // std::stack<int> st;
+  // st.push(source);
+  //
+  // while (!st.empty()) {
+  //   int u = st.top();
+  //   st.pop();
+  //
+  //   if (u == destiny) return true;
+  //
+  //   for ( auto v : edges[u]) {
+  //     if (capacity[u][v] - rCap[u][v] > 0 && !colors[v]) {
+  //       colors[v] = true;
+  //       parent[v] = u;
+  //       st.push(v);
+  //     }
+  //   }
+  // }
+  // return false;
+  colors[source] = true;
+  if(source == destiny) return true;
 
-void Graph::set_weight_soldier(int v) {
-  this->set_weight(0, v , 1);
-}
-
-void Graph::set_weight_horse_to_soldier(int u, int v) {
-  this->set_weight(v, this->m + u, 1);
-}
-
-bool Graph::bfs( int source_v, int destiny_v ) {
-  std::cerr << "\033[1;37m" << "exec bfs" << '\n' << "\033[0m";
-  bool response = false;
-  int u;
-
-  std::queue<int> queue;
-  queue.push(source_v);
-
-  std::fill(this->parent.begin(), this->parent.end(), -1);
-  parent[source_v] = source_v;
-
-  while (!queue.empty()) {
-    u = queue.front();
-    std::cerr << "\033[1;31m" << u << ' ' << "\033[0m";
-    queue.pop();
-    if (u == destiny_v) { // no return, because must finish theri job
-      std::cerr << "\033[1;31m" << '\n' << "\033[0m";
-      response = true;
-    }
-    std::sort(this->edges[u].begin(), this->edges[u].end());
-    for ( auto v : this->edges[u] ) {
-      if (this->rCap[u][v] > 0 && parent[v] == -1) {
-        queue.push(v);
-        this->parent[v] = u;
-      }
+  for ( int v = 0; v < this->card_v; v++ ) {
+    if(capacity[source][v] - rCap[source][v] > 0 && !colors[v]) {
+      parent[v] = source;
+      if(dfs(v, destiny, colors)) return true;
     }
   }
-  std::cerr << "\033[1;31m" << '\n' << "\033[0m";
-  return response;
+
+  return false;
+}
+
+bool Graph::getPath(int source, int destiny) {
+  std::vector<bool> colors(this->card_v, false);
+  return dfs(source, destiny, colors);
 }
 
 int Graph::FordFulkerson() {
-  std::cerr << "\033[1;37m" << "exec FordFulkerson" << '\n' << "\033[0m";
-  int source_v = 0;
-  int destiny_v = this->n + this->m + 1;
-  int response = 0;
-  int path_flow;
+  int x;
+  int source = 0;
+  int destiny = this->m + this->n + 1;
+  std::fill(parent.begin(), parent.end(), -1);
 
-  for (int i = 0; i < this->card_v; i++) {
-    for (int j = 0; j < this->card_v; j++) {
-      this->rCap[i][j] = this->capacity[i][j];
+  parent[source] = source;
+
+  int max_flow = 0;
+
+  while (getPath(source, destiny)) {
+    int flow = std::numeric_limits<std::int32_t>::max();
+
+    x = destiny;
+    while (x != source) {
+      flow = std::min(flow, capacity[parent[x]][x] - rCap[parent[x]][x]);
+      x = parent[x];
+    }
+
+    x = destiny;
+    while (x != source) {
+      rCap[parent[x]][x] += flow;
+      rCap[x][parent[x]] -= flow;
+      x = parent[x];
     }
   }
 
-  // std::fill(this->parent.begin(), this->parent.end(), -1);
-
-  while (this->bfs(source_v, destiny_v)) {
-
-    for (int i = 1; i < this->card_v; i++) {
-      std::cerr << "\033[1;36m" << this->parent[i] << ' ' << "\033[0m";
-    }
-    std::cerr << "\033[1;31m" << '\n' << "\033[0m";
-    // printRCap();
-
-    // Find minimum residual capacity of the capacity along the
-    // path filled by BFS. Or we can say find the maximum flow
-    // through the path found.
-    path_flow = std::numeric_limits<int>::max();
-    int s = destiny_v;
-
-    while (s != source_v) {
-      std::cerr << "\033[1;34m" << "path_flow " << path_flow  << "\trCap[" << parent[s] << "][" << s << "] " << this->rCap[parent[s]][s] << '\n' << "\033[0m";
-      path_flow = std::min(path_flow, this->rCap[parent[s]][s]);
-      s = parent[s];
-    }
-
-    // update residual capacities of the capacity and reverse capacity
-    // along the path
-    int v = destiny_v;
-    int u;
-
-    while (v != source_v) {
-      u = parent[v];
-      this->rCap[u][v] -= path_flow;
-      this->rCap[v][u] += path_flow;
-      v = parent[v];
-    }
-
-    std::cerr << "\033[1;32m" << "get path_flow " << path_flow << '\n' << "\033[0m";
-    response += path_flow; // Add path flow to overall flow
-
-    std::cerr << "\033[1;33m" << "max_flow " << response << '\n' << "\033[0m";
+  for (int i = 0; i < card_v; i++) {
+    max_flow += rCap[i][destiny];
   }
-  std::cerr << "\033[1;33m" << "response " << response << '\n' << "\033[0m";
-  return response;
-}
-
-void Graph::printEdges() {
-  for (int i = 0; i < this->card_v; i++) {
-    std::cout << i << " --> ";
-    for (auto x : this->edges[i]) {
-      std::cout << x << ':' << this->capacity[i][x] << ' ';
-    }
-    std::cout << '\n';
-  }
+  return max_flow;
 }
 
 int main(int argc, char const *argv[]) {
@@ -185,14 +145,14 @@ int main(int argc, char const *argv[]) {
 
     for (int i = 1; i <= n; i++) {
       std::cin >> c_i;
-      graph.set_weight_horse(i, c_i);
+      graph.set_weight(m + i, n + m + 1, c_i);
     }
     for (int i = 1; i <= m; i++) {
-      graph.set_weight_soldier(i);
+      graph.set_weight(0, i, 1);
     }
     for (int i = 1; i <= k; i++) {
       std::cin >> u >> v;
-      graph.set_weight_horse_to_soldier(u, v);
+      graph.set_weight(v, m + u, 1);
     }
 
     // graph.printEdges();
