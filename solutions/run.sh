@@ -111,9 +111,12 @@ elif [ $choose_language = "make" ]; then
 
 		if [[ "$PATH_TEMP" -eq "spoj" ]]; then
 			printf " * http://br.spoj.com/problems/$test_id/\n" >> $test_id/$test_id.cpp
-		elif [[ "$PATH_TEMP" -eq "uri" ]]; then
+		elif [[ "$PATH_TEMP" -eq "1 - Iniciante" || "$PATH_TEMP" -eq "2 - Ad-Hoc" || "$PATH_TEMP" -eq "3 - Strings" || "$PATH_TEMP" -eq "4 - Estruturas e Bibliotecas" || "$PATH_TEMP" -eq "5 - Matemática" || "$PATH_TEMP" -eq "6 - Paradigmas" || "$PATH_TEMP" -eq "7 - Grafos" || "$PATH_TEMP" -eq "8 - Geometria Computacional" ]]; then
 			printf " * https://www.urionlinejudge.com.br/judge/pt/problems/view/$test_id\n" >> $test_id/$test_id.cpp
 		fi
+
+
+
 
 		printf " * $test_id\n */\n\n#include <iostream>\nint main(){\n\t// code\n}\n" >> $test_id/$test_id.cpp
 
