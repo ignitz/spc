@@ -115,10 +115,7 @@ elif [ $choose_language = "make" ]; then
 			printf " * https://www.urionlinejudge.com.br/judge/pt/problems/view/$test_id\n" >> $test_id/$test_id.cpp
 		fi
 
-
-
-
-		printf " * $test_id\n */\n\n#include <iostream>\nint main(){\n\t// code\n}\n" >> $test_id/$test_id.cpp
+		printf " * $test_id\n */\n\n#include <iostream>\n\nint main(){\n\t// code\n\treturn 0;\n}\n" >> $test_id/$test_id.cpp
 
 		mkdir $test_id/tests
 		touch $test_id/tests/temp.txt
