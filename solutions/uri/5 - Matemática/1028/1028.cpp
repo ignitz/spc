@@ -7,12 +7,26 @@
 
 #include <iostream>
 
+// Algoritmo euclidiano
+int mdc2 (int a, int b) {
+    int r;
+
+    while (b != 0) {
+        r = a % b;
+        a = b;
+        b = r;
+    }
+    return a;
+    
+}
+
+
 int mdc (int n, int m) {
     int max_div = std::max(n/2, m/2);
 
     int max_div_common = 1;
     // first find all even numbers
-    while ( (n % 2 == 0) && (m % 2 == 0) ) {
+    while ( (n % 2 == 0) && (m % 2 == 0) && n > 0 && m > 0) {
         max_div_common *= 2;
         n /= 2; m /= 2;
     }
@@ -36,7 +50,7 @@ int main() {
     std::cin >> number_of_tests;
     for (int i = 0; i < number_of_tests; i++) {
         std::cin >> f1 >> f2;
-        std::cout << mdc(f1, f2) << std::endl;
+        std::cout << mdc2(f1, f2) << std::endl;
     }
 	return 0;
 }
