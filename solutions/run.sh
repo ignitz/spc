@@ -107,17 +107,9 @@ elif [ $choose_language = "make" ]; then
 		touch $test_id/$test_id.cpp
 		# Estou assumindo que já é do SPOJ
 		printf "/*\n * Yuri Niitsuma\n * 2011039023\n" > $test_id/$test_id.cpp
-		PATH_TEMP=${PWD##*/}          # to assign to a variable
-
-		if [[ "$PATH_TEMP" -eq "uva" ]]; then
-			printf " * <PUT URL HERE>\n" >> $test_id/$test_id.cpp
-		elif [[ "$PATH_TEMP" -eq "spoj" ]]; then
-			printf " * http://br.spoj.com/problems/$test_id/\n" >> $test_id/$test_id.cpp
-		elif [[ "$PATH_TEMP" -eq "1 - Iniciante" || "$PATH_TEMP" -eq "2 - Ad-Hoc" || "$PATH_TEMP" -eq "3 - Strings" || "$PATH_TEMP" -eq "4 - Estruturas e Bibliotecas" || "$PATH_TEMP" -eq "5 - Matemática" || "$PATH_TEMP" -eq "6 - Paradigmas" || "$PATH_TEMP" -eq "7 - Grafos" || "$PATH_TEMP" -eq "8 - Geometria Computacional" ]]; then
-			printf " * https://www.urionlinejudge.com.br/judge/pt/problems/view/$test_id\n" >> $test_id/$test_id.cpp
-		fi
-
-		printf " * $test_id\n */\n\n#include <iostream>\n\nint main(){\n\t// code\n\treturn 0;\n}\n" >> $test_id/$test_id.cpp
+		# PATH_TEMP=${PWD##*/}          # to assign to a variable
+		printf " * <PUT URL HERE>\n" >> $test_id/$test_id.cpp
+		printf " * $test_id\n*/\n\n#include <iostream>\n\nint main(){\n\t// code\n\treturn 0;\n}\n" >> $test_id/$test_id.cpp
 
 		mkdir $test_id/tests
 		touch $test_id/tests/temp.txt
