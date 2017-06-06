@@ -11,30 +11,26 @@
 int main(int argc, char const *argv[]) {
 	int l, c, r1, r2;
 
-	double x;
+	int x, y, dist;
 
 	while (std::cin >> l >> c >> r1 >> r2) {
 		if ( !(l | c | r1 | r2) )
 			break;
 
-		// calc dist
-		x = std::sqrt(2 * (r1*r1 + r2*r2)) + ((double)(r1 + r2));
-		std::cout << x << std::endl;
-		x = std::sqrt(2)*(r1 + r2) + ((double) (r1 + r2));
-		std::cout << x << std::endl;
-		x = std::sqrt(l*l + c*c);
-		std::cout << x << std::endl;
-		std::cout << ((double) l) << std::endl;
-		std::cout << ((double) c) << std::endl;
-
-		if (x <= ((double) l) ||
-			x <= ((double) c) ||
-			std::sqrt(2)*(r1 + r2) + ((double) (r1 + r2)) <= std::sqrt(l*l + c*c))
-		{
-			std::cout << 'S' << std::endl;
+		if (r1 + r1 > c || r1 + r1 > l || r2 + r2 > l || r2 + r2 > c) {
+			std::cout << "N" << '\n';
 		}
 		else {
-			std::cout << 'N' << std::endl;
+			x = l - r1 - r2;
+			y = c - r1 - r2;
+			dist = x*x + y*y;
+
+			if ((r1 + r2)*(r1 + r2) <= dist) {
+				std::cout << "S" << '\n';
+			}
+			else {
+				std::cout << "N" << '\n';
+			}
 		}
 	}
 
