@@ -1,9 +1,11 @@
 # SPC - Soluções de Problemas Computacionais
 
-# [URI](https://www.urionlinejudge.com.br/)
+É uma matéria optativa para o curso de Ciência da Computação na UFMG. Fiz no semestre 2017/1.  
+Agora este repositório servirá para guardar as soluções que conseguir nos juízes online.
 
-Soluções de desafios do URI Online Judge.
-
-# [SPOJ](http://br.spoj.com)
-
-pass
+- [URI](https://www.urionlinejudge.com.br/)
+- [SPOJBR](http://br.spoj.com)
+- [SPOJ](http://www.spoj.com/)
+- [UVa Online Judge](https://uva.onlinejudge.org/)
+- [Codeforces](http://codeforces.com/)
+- [Peking University JudgeOnline](http://poj.org/)
