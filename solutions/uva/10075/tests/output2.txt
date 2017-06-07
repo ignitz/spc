@@ -1,0 +1,1168 @@
+Case #1
+14349 km
+2128 km
+6253 km
+24169 km
+15789 km
+9371 km
+15789 km
+9840 km
+16715 km
+5628 km
+25160 km
+5628 km
+11115 km
+17916 km
+11131 km
+9840 km
+
+Case #2
+no route exists
+16021 km
+59321 km
+2210 km
+no route exists
+no route exists
+32246 km
+no route exists
+no route exists
+
+Case #3
+no route exists
+52283 km
+no route exists
+no route exists
+35800 km
+no route exists
+no route exists
+23736 km
+no route exists
+394 km
+no route exists
+17465 km
+22266 km
+28028 km
+no route exists
+no route exists
+16730 km
+no route exists
+
+Case #4
+no route exists
+10994 km
+no route exists
+18082 km
+7438 km
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #5
+23214 km
+21439 km
+25958 km
+20535 km
+11400 km
+28815 km
+35260 km
+16242 km
+12947 km
+12947 km
+17977 km
+19833 km
+22188 km
+19209 km
+18191 km
+17114 km
+17460 km
+
+Case #6
+10132 km
+11525 km
+9518 km
+20716 km
+12255 km
+22054 km
+18847 km
+21425 km
+9544 km
+25517 km
+36654 km
+8043 km
+9523 km
+28611 km
+19802 km
+20652 km
+no route exists
+no route exists
+no route exists
+
+Case #7
+11375 km
+12343 km
+4824 km
+10736 km
+11280 km
+11823 km
+13807 km
+7326 km
+
+Case #8
+6237 km
+16361 km
+17581 km
+10870 km
+9445 km
+18968 km
+
+Case #9
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #10
+7232 km
+17401 km
+18766 km
+no route exists
+17270 km
+32869 km
+17695 km
+24084 km
+30349 km
+no route exists
+
+Case #11
+14592 km
+20157 km
+20157 km
+
+Case #12
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #13
+no route exists
+14175 km
+5288 km
+36971 km
+24060 km
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #14
+no route exists
+37448 km
+58983 km
+6357 km
+9481 km
+37827 km
+66002 km
+62504 km
+80572 km
+no route exists
+no route exists
+9481 km
+18634 km
+18663 km
+14086 km
+80572 km
+no route exists
+no route exists
+
+Case #15
+no route exists
+26469 km
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #16
+33996 km
+33959 km
+24743 km
+21856 km
+30041 km
+3195 km
+18978 km
+12091 km
+35175 km
+13844 km
+24314 km
+5134 km
+no route exists
+29666 km
+8605 km
+1358 km
+16603 km
+
+Case #17
+no route exists
+no route exists
+no route exists
+26826 km
+no route exists
+no route exists
+no route exists
+13312 km
+no route exists
+no route exists
+8027 km
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+14591 km
+no route exists
+no route exists
+no route exists
+
+Case #18
+11841 km
+35858 km
+16358 km
+15841 km
+13961 km
+12102 km
+24088 km
+37415 km
+20023 km
+10568 km
+24623 km
+51376 km
+27765 km
+19908 km
+21071 km
+19238 km
+16358 km
+14148 km
+11933 km
+16358 km
+
+Case #19
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #20
+no route exists
+8063 km
+no route exists
+no route exists
+8063 km
+8063 km
+no route exists
+no route exists
+no route exists
+8063 km
+
+Case #21
+32778 km
+15359 km
+no route exists
+87822 km
+18464 km
+
+Case #22
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+61821 km
+no route exists
+no route exists
+no route exists
+41709 km
+no route exists
+41743 km
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #23
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+2448 km
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #24
+9399 km
+no route exists
+no route exists
+no route exists
+9399 km
+no route exists
+11506 km
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #25
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #26
+no route exists
+no route exists
+
+Case #27
+no route exists
+27540 km
+29139 km
+27540 km
+19917 km
+50458 km
+6675 km
+no route exists
+
+Case #28
+14498 km
+3124 km
+
+Case #29
+4972 km
+18641 km
+18641 km
+18641 km
+2032 km
+2032 km
+18641 km
+16429 km
+6357 km
+2940 km
+19299 km
+
+Case #30
+11099 km
+12153 km
+4744 km
+12153 km
+12880 km
+12153 km
+12218 km
+9196 km
+11489 km
+8524 km
+9196 km
+9196 km
+9884 km
+
+Case #31
+15529 km
+9592 km
+5392 km
+20217 km
+7508 km
+10280 km
+18385 km
+3473 km
+9360 km
+12678 km
+17361 km
+13770 km
+10922 km
+17319 km
+8785 km
+16175 km
+12141 km
+
+Case #32
+22792 km
+no route exists
+47004 km
+5774 km
+23871 km
+no route exists
+24130 km
+no route exists
+16474 km
+no route exists
+63249 km
+no route exists
+no route exists
+
+Case #33
+20837 km
+5621 km
+14533 km
+8610 km
+7159 km
+39893 km
+20206 km
+16007 km
+18847 km
+16964 km
+13912 km
+8463 km
+26326 km
+11716 km
+8610 km
+20861 km
+
+Case #34
+44396 km
+4940 km
+20236 km
+42756 km
+14744 km
+34829 km
+24732 km
+
+Case #35
+6914 km
+no route exists
+7327 km
+
+Case #36
+no route exists
+no route exists
+50791 km
+47553 km
+37948 km
+
+Case #37
+no route exists
+21489 km
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #38
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+5995 km
+25695 km
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #39
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #40
+no route exists
+no route exists
+no route exists
+no route exists
+17186 km
+
+Case #41
+no route exists
+
+Case #42
+no route exists
+
+Case #43
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+3995 km
+no route exists
+no route exists
+
+Case #44
+38465 km
+30110 km
+no route exists
+6074 km
+
+Case #45
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #46
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+16829 km
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+14560 km
+
+Case #47
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+6233 km
+no route exists
+15718 km
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #48
+14406 km
+8430 km
+4387 km
+14152 km
+6061 km
+7741 km
+8430 km
+6061 km
+10448 km
+10109 km
+4387 km
+
+Case #49
+no route exists
+no route exists
+no route exists
+
+Case #50
+no route exists
+42476 km
+no route exists
+70840 km
+no route exists
+17369 km
+26041 km
+no route exists
+27544 km
+53353 km
+30801 km
+no route exists
+89961 km
+
+Case #51
+20792 km
+21052 km
+19907 km
+32530 km
+27180 km
+5006 km
+15173 km
+23136 km
+26249 km
+22159 km
+18824 km
+15385 km
+13262 km
+18129 km
+20625 km
+16099 km
+
+Case #52
+50969 km
+no route exists
+48256 km
+42705 km
+no route exists
+no route exists
+35256 km
+no route exists
+8376 km
+no route exists
+60148 km
+40081 km
+
+Case #53
+63192 km
+6503 km
+18296 km
+30323 km
+30323 km
+6840 km
+6313 km
+
+Case #54
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #55
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #56
+44431 km
+no route exists
+no route exists
+33478 km
+
+Case #57
+15404 km
+11598 km
+15223 km
+14252 km
+
+Case #58
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+12554 km
+no route exists
+27468 km
+25294 km
+
+Case #59
+12597 km
+8469 km
+2824 km
+11155 km
+8972 km
+1822 km
+7314 km
+6050 km
+10415 km
+10415 km
+12597 km
+10673 km
+13401 km
+13593 km
+1822 km
+2913 km
+718 km
+10673 km
+10923 km
+9210 km
+
+Case #60
+no route exists
+no route exists
+no route exists
+
+Case #61
+11438 km
+no route exists
+
+Case #62
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #63
+4226 km
+4226 km
+4226 km
+4226 km
+4226 km
+4226 km
+4226 km
+4226 km
+4226 km
+4226 km
+4226 km
+4226 km
+4226 km
+4226 km
+
+Case #64
+10213 km
+no route exists
+no route exists
+no route exists
+49834 km
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+26814 km
+36037 km
+no route exists
+no route exists
+no route exists
+
+Case #65
+14470 km
+10056 km
+8641 km
+8641 km
+10056 km
+6371 km
+8099 km
+4485 km
+6371 km
+10357 km
+
+Case #66
+13307 km
+7680 km
+29291 km
+13761 km
+16296 km
+
+Case #67
+24580 km
+7968 km
+20301 km
+24580 km
+12333 km
+12333 km
+12247 km
+12247 km
+12247 km
+
+Case #68
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #69
+20154 km
+
+Case #70
+16178 km
+no route exists
+3766 km
+18765 km
+11343 km
+23806 km
+20583 km
+13613 km
+8723 km
+17751 km
+45903 km
+
+Case #71
+12848 km
+22001 km
+6401 km
+10230 km
+11157 km
+10650 km
+
+Case #72
+21451 km
+9075 km
+8767 km
+
+Case #73
+19399 km
+9299 km
+32148 km
+18879 km
+
+Case #74
+9058 km
+
+Case #75
+16680 km
+no route exists
+no route exists
+no route exists
+41153 km
+no route exists
+22851 km
+no route exists
+
+Case #76
+no route exists
+
+Case #77
+17473 km
+13429 km
+13011 km
+13429 km
+2373 km
+13366 km
+11056 km
+13429 km
+2373 km
+11355 km
+6345 km
+17529 km
+13429 km
+9195 km
+13429 km
+17532 km
+
+Case #78
+12065 km
+8620 km
+6717 km
+12596 km
+15699 km
+
+Case #79
+18060 km
+no route exists
+no route exists
+no route exists
+16431 km
+no route exists
+no route exists
+no route exists
+7850 km
+4999 km
+no route exists
+16083 km
+17377 km
+no route exists
+59785 km
+
+Case #80
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #81
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #82
+no route exists
+no route exists
+no route exists
+30367 km
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+34197 km
+no route exists
+no route exists
+24776 km
+no route exists
+no route exists
+
+Case #83
+no route exists
+21333 km
+no route exists
+26167 km
+47469 km
+no route exists
+no route exists
+47182 km
+42843 km
+85817 km
+no route exists
+no route exists
+41122 km
+no route exists
+
+Case #84
+no route exists
+no route exists
+no route exists
+
+Case #85
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #86
+11265 km
+18275 km
+no route exists
+
+Case #87
+35284 km
+13323 km
+35284 km
+14402 km
+30925 km
+35284 km
+no route exists
+
+Case #88
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #89
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #90
+37573 km
+15961 km
+2188 km
+6129 km
+7371 km
+10082 km
+
+Case #91
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #92
+3520 km
+16983 km
+no route exists
+no route exists
+no route exists
+16513 km
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #93
+32649 km
+37763 km
+4925 km
+52963 km
+20700 km
+no route exists
+16794 km
+no route exists
+56647 km
+no route exists
+15146 km
+no route exists
+no route exists
+no route exists
+no route exists
+6012 km
+
+Case #94
+18593 km
+14132 km
+27145 km
+14597 km
+18464 km
+24051 km
+13913 km
+9836 km
+28564 km
+10906 km
+8319 km
+19336 km
+23792 km
+23792 km
+13913 km
+16793 km
+11647 km
+
+Case #95
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+12720 km
+no route exists
+
+Case #96
+18226 km
+19330 km
+18226 km
+21845 km
+22205 km
+2767 km
+14818 km
+16209 km
+23471 km
+10554 km
+6243 km
+4373 km
+15339 km
+15839 km
+
+Case #97
+10653 km
+58743 km
+no route exists
+no route exists
+14601 km
+37074 km
+14651 km
+13156 km
+
+Case #98
+no route exists
+no route exists
+no route exists
+20003 km
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+no route exists
+
+Case #99
+16597 km
+13019 km
+
+Case #100
+no route exists
