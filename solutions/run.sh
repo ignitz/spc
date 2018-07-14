@@ -35,6 +35,20 @@ do_test_python() {
 	done
 }
 
+do_test_node() {
+	for i in $(seq 1 $2)
+	do
+		echo "test number $i:"
+		node $1/$1.js < $1/tests/input$i.txt > $1/tests/temp$i.txt
+		diff $1/tests/temp$i.txt $1/tests/output$i.txt > /dev/null
+		if [ $? -ne 0 ] ; then
+			echo "----------------- error in $i"
+			diff $1/tests/temp$i.txt $1/tests/output$i.txt
+		fi
+		rm -rf $1/tests/temp$i.txt
+	done
+}
+
 compile() {
 	g++ $1/$1.cpp -g -std=gnu++11 -o $1.out
 }
@@ -56,6 +70,10 @@ main_cpp() {
 
 main_python() {
 	do_test_python $1 $2
+}
+
+main_node() {
+	do_test_node $1 $2
 }
 
 do_dev_cpp() {
@@ -81,24 +99,38 @@ do_dev_python() {
 	python3 $1/$1.py < $1/tests/temp.txt
 }
 
+do_dev_node() {
+	if ! [ -d $1/tests/ ]; then
+		echo "No tests directory in $1"
+		exit 1
+	fi
+	node $1/$1.js < $1/tests/temp.txt
+}
+
 test_times=$3
 test_id=$2
 # cpp or python, python version is 3
 choose_language=$1
 
-if [ $choose_language = "cpp" ]; then
+if [[ $choose_language = "cpp" ]]; then
 	if [ $test_times ]; then
 		main_cpp $test_id $test_times
 	else
 		do_dev_cpp $test_id
 	fi
-elif [ $choose_language = "py" ]; then
+elif [[ $choose_language = "py" ]]; then
 	if [ $test_times ]; then
 		main_python $test_id $test_times
 	else
 		do_dev_python $test_id
 	fi
-elif [ $choose_language = "make" ]; then
+elif [[ $choose_language = "node" ]]; then
+	if [ $test_times ]; then
+		main_node $test_id $test_times
+	else
+		do_dev_node $test_id
+	fi
+elif [[ $choose_language = "make" ]]; then
 	if [ -d $test_id ]; then
 		echo 'Test ' . $test_id . ' already exist.'
 		exit 1
