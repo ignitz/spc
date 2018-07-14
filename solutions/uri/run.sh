@@ -49,8 +49,12 @@ do_test_node() {
 	done
 }
 
-compile() {
+compile_cpp() {
 	g++ $1/$1.cpp -g -std=gnu++11 -o $1.out
+}
+
+compile_c() {
+	g++ $1/$1.c -g -o $1.out
 }
 
 check_error() {
@@ -60,9 +64,17 @@ check_error() {
 	fi
 }
 
+main_c() {
+	clean_exec
+	compile_c $1
+	check_error $1
+	do_test_cpp $1 $2
+	clean_exec
+}
+
 main_cpp() {
 	clean_exec
-	compile $1
+	compile_cpp $1
 	check_error $1
 	do_test_cpp $1 $2
 	clean_exec
@@ -78,7 +90,22 @@ main_node() {
 
 do_dev_cpp() {
 	clean_exec
-	compile $1
+	compile_cpp $1
+	check_error $1
+	if ! [ -d $1/tests/ ]; then
+		echo "No tests directory in $1"
+		exit 1
+	fi
+	# cat $1/tests/temp.txt
+	# echo '===================================='
+	./$1.out < $1/tests/temp.txt
+
+	clean_exec
+}
+
+do_dev_c() {
+	clean_exec
+	compile_c $1
 	check_error $1
 	if ! [ -d $1/tests/ ]; then
 		echo "No tests directory in $1"
@@ -117,6 +144,12 @@ if [[ $choose_language = "cpp" ]]; then
 		main_cpp $test_id $test_times
 	else
 		do_dev_cpp $test_id
+	fi
+elif [[ $choose_language = "c" ]]; then
+	if [ $test_times ]; then
+		main_c $test_id $test_times
+	else
+		do_dev_c $test_id
 	fi
 elif [[ $choose_language = "py" ]]; then
 	if [ $test_times ]; then
