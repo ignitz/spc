@@ -23,5 +23,8 @@ $./run.sh make <ID of problem>
 To run tests and compare input and output.
 
 ```
-$./run.sh <type> <ID of problem>
+$./run.sh <type> <ID of problem> [optional:numberOfTests]
 ```
+
+If numberOfTests not passs, only test with `temp.txt` and output in `stdout`.  
+If the param was passed, then will compare the output with `outputX.txt`.
