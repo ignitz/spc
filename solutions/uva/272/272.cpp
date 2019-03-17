@@ -9,6 +9,27 @@
 
 int main()
 {
-	// code
+	bool check = true;
+	std::string input;
+	while (std::getline(std::cin, input))
+	{
+		for (auto &c : input)
+		{
+			if (c == '"')
+			{
+				if (check)
+					std::cout << "``";
+				else
+					std::cout << "''";
+				check = !check;
+			}
+			else
+			{
+				std::cout << c;
+			}
+		}
+		std::cout << '\n';
+	}
+
 	return 0;
 }
