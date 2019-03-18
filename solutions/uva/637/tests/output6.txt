@@ -1,0 +1,35 @@
+Printing order for 4 pages:
+Sheet 1, front: 4, 1
+Sheet 1, back : 2, 3
+Printing order for 8 pages:
+Sheet 1, front: 8, 1
+Sheet 1, back : 2, 7
+Sheet 2, front: 6, 3
+Sheet 2, back : 4, 5
+Printing order for 12 pages:
+Sheet 1, front: 12, 1
+Sheet 1, back : 2, 11
+Sheet 2, front: 10, 3
+Sheet 2, back : 4, 9
+Sheet 3, front: 8, 5
+Sheet 3, back : 6, 7
+Printing order for 16 pages:
+Sheet 1, front: 16, 1
+Sheet 1, back : 2, 15
+Sheet 2, front: 14, 3
+Sheet 2, back : 4, 13
+Sheet 3, front: 12, 5
+Sheet 3, back : 6, 11
+Sheet 4, front: 10, 7
+Sheet 4, back : 8, 9
+Printing order for 20 pages:
+Sheet 1, front: 20, 1
+Sheet 1, back : 2, 19
+Sheet 2, front: 18, 3
+Sheet 2, back : 4, 17
+Sheet 3, front: 16, 5
+Sheet 3, back : 6, 15
+Sheet 4, front: 14, 7
+Sheet 4, back : 8, 13
+Sheet 5, front: 12, 9
+Sheet 5, back : 10, 11
