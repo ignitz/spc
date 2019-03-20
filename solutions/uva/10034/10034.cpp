@@ -15,6 +15,7 @@
 // spanning tree problem with coordinates
 
 /*****************************************/
+// Peguei o código do Kruskal daqui
 // https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-using-stl-in-c/
 // To represent Disjoint Sets
 struct DisjointSets
