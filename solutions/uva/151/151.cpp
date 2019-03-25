@@ -5,7 +5,7 @@
  * 151 - Power Crisis
 */
 
-// Similiar to Josephus problem but generalized
+// Similar to Josephus problem but generalized
 // To understand more watch this Numberphile video
 // https://www.youtube.com/watch?v=uCsD3ZGzMgE
 
