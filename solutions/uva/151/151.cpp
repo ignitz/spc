@@ -5,50 +5,69 @@
  * 151 - Power Crisis
 */
 
+// Similiar to Josephus problem but generalized
+// To understand more watch this Numberphile video
+// https://www.youtube.com/watch?v=uCsD3ZGzMgE
+
 #include <iostream>
 #include <vector>
 
 #define DESIRED_POSITION 13
 
-int g(int n, int k)
+std::vector<int> genJosephusMaroto(int maxQuery)
 {
-	if (n == 0)
-		return 0;
-	else
+	std::vector<int> results;
+
+	int m; // jumper
+	int position, count;
+
+	for (int k = DESIRED_POSITION; k <= maxQuery; k++)
 	{
-		return (g(n - 1, k) + k) % n;
+		m = 1;
+		while (true)
+		{
+			position = 0;
+			std::vector<bool> lightOn(maxQuery, true);
+			for (int i = 0, count = m; i < k - 1; i++, count = m)
+			{
+				lightOn[position] = false;
+				while (true)
+				{
+					position = (position + 1) % k;
+					count += lightOn[position] ? -1 : 0;
+					if (!count)
+						break;
+				}
+			}
+			// found
+			if (lightOn[DESIRED_POSITION - 1])
+				break;
+			m++;
+		}
+		// store results
+		results.push_back(m);
 	}
+	return results;
 }
 
-// int main(int argc, char const *argv[])
-// {
-// 	int n;
-// 	while (true)
-// 	{
-// 		std::cin >> n;
-// 		std::vector<int> posicoes(0, n);
-// 		if (n == 0)
-// 			break;
-// 		for (int k = 2; k < n; k++)
-// 		{
-// 			auto res = g(n, k);
-// 			if (res == DESIRED_POSITION)
-// 			{
-// 				std::cout << k - 1 << '\n';
-// 				break;
-// 			}
-// 		}
-// 	}
-
-// 	return 0;
-// }
-
-int main()
+int main(int argc, char const *argv[])
 {
-	// for (int i = 1; i < 32; i++)
-	// {
-	// 	std::cout << "i = " << i << ' ' << "\tg(n,k) = " << g(i, 6) + 1 << '\n';
-	// }
-	std::cout << "i = " << 50 << ' ' << "\tg(n,k) = " << g(50, 10) + 1 << '\n';
+	int n, maxValue = 0;
+
+	std::vector<int> inputValues;
+
+	while (true)
+	{
+		std::cin >> n;
+		if (n == 0)
+			break;
+		inputValues.push_back(n - DESIRED_POSITION);
+		maxValue = n > maxValue ? n : maxValue;
+	}
+
+	auto josephusValues = genJosephusMaroto(maxValue);
+	for (int &value : inputValues)
+		std::cout << josephusValues[value] << '\n';
+
 	return 0;
 }
