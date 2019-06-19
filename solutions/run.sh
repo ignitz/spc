@@ -50,7 +50,7 @@ do_test_node() {
 }
 
 compile() {
-	g++ $1/$1.cpp -g -std=gnu++11 -o $1.out
+	g++ $1/$1.cpp -g -std=gnu++17 -o $1.out
 }
 
 check_error() {
